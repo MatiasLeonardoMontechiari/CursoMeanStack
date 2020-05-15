@@ -15,7 +15,7 @@ import { PostListComponent } from './post-list/post-list.component';
 @NgModule({
   declarations: [
     AppComponent,
-    // Se declara el componente creado
+    // Se declara el componente creado.
     PostCreateComponent,
     HeaderComponent,
     PostListComponent
