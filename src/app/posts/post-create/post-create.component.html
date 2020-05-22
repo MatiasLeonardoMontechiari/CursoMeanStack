@@ -1,13 +1,16 @@
 <h2> Creacion de Post </h2>
-<mat-card>
-  <mat-form-field>
-    <input matInput type="text" [(ngModel)]="enteredTitle">
-  </mat-form-field>
-  <mat-form-field>
-    <textarea matInput rows="0" [(ngModel)]="enteredContent"></textarea>
-  </mat-form-field>
-  <button
-   mat-raised-button
-   color="primary"
-   (click)="onAddPost()">Guardar Post</button>
-</mat-card>
+  <mat-card>
+    <mat-form-field>
+    <!-- Uso de la directiva ngModel para uso bidireccional de los datos  -->
+      <input matInput type="text" [(ngModel)]="enteredTitle">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput rows="0" [(ngModel)]="enteredContent"></textarea>
+      <!-- Se llama al evento OnAddPost cuando se clickea el boton de Guardar Post -->
+    </mat-form-field>
+        <button
+        mat-raised-button
+        color="primary"
+        (click)="onAddPost()">Guardar Post
+      </button>
+  </mat-card>

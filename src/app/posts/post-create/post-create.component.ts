@@ -10,7 +10,7 @@ export class PostCreateComponent {
   enteredTitle = '';
   enteredContent = '';
   @Output() postCreated = new EventEmitter();
-
+// funcion al grabar el post, se usa On cuando el evento activa algo.
   onAddPost() {
     const post = {
       title: this.enteredTitle,

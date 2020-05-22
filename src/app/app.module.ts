@@ -1,6 +1,7 @@
 // Imports de Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+// Para incluir ngModel que esta incluido en el modulo de formularios
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule } from '@angular/material';
@@ -22,6 +23,7 @@ import { PostListComponent } from './post-list/post-list.component';
   ],
   imports: [
     BrowserModule,
+    // Para que reconoza el uso de modulos se deben importar aca
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule,
