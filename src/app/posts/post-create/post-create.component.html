@@ -1,16 +1,36 @@
 <h2> Creacion de Post </h2>
   <mat-card>
-    <mat-form-field>
-    <!-- Uso de la directiva ngModel para uso bidireccional de los datos  -->
-      <input matInput type="text" [(ngModel)]="enteredTitle">
-    </mat-form-field>
-    <mat-form-field>
-      <textarea matInput rows="0" [(ngModel)]="enteredContent"></textarea>
+    <!-- Referencia al formulario #postForm -->
+    <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+      <mat-form-field>
+      <!-- Uso de la directiva ngModel para uso bidireccional de los datos  -->
+        <input
+          matInput
+          type="text"
+          name="title"
+          ngModel
+          required
+          minlength="3"
+          #title="ngModel">
+          <mat-error *ngIf="title.invalid">Por favor ingresa un titulo valido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <textarea
+          matInput
+          rows="4"
+          name="content"
+          ngModel
+          required
+          #content="ngModel">
+        </textarea>
+          <mat-error *ngIf="content.invalid">Por favor ingresa un contenido valido</mat-error>
+      </mat-form-field>
       <!-- Se llama al evento OnAddPost cuando se clickea el boton de Guardar Post -->
-    </mat-form-field>
-        <button
+      <button
         mat-raised-button
         color="primary"
-        (click)="onAddPost()">Guardar Post
+        type="submit">Guardar Post
       </button>
+    </form>
   </mat-card>
